@@ -2,7 +2,7 @@
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/eVa6jD
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
-
+--Load this last
 CREATE TABLE "Campaign" (
     "cf_id" int   NOT NULL,
     "contact_id" int   NOT NULL,
@@ -23,6 +23,8 @@ CREATE TABLE "Campaign" (
      )
 );
 
+
+--Load this first
 CREATE TABLE "Category" (
     "cat_id" varchar   NOT NULL,
     "category" varchar   NOT NULL,
@@ -31,6 +33,7 @@ CREATE TABLE "Category" (
      )
 );
 
+--Load this second
 CREATE TABLE "Subcategory" (
     "subcat_id" varchar   NOT NULL,
     "subcategory" varchar   NOT NULL,
@@ -39,6 +42,7 @@ CREATE TABLE "Subcategory" (
      )
 );
 
+--Load this third
 CREATE TABLE "Contacts" (
     "contact_id" int   NOT NULL,
     "first_name" varchar   NOT NULL,
@@ -49,6 +53,7 @@ CREATE TABLE "Contacts" (
      )
 );
 
+--Run these after the tables
 ALTER TABLE "Campaign" ADD CONSTRAINT "fk_Campaign_contact_id" FOREIGN KEY("contact_id")
 REFERENCES "Contacts" ("contact_id");
 
