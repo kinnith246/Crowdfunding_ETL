@@ -1,4 +1,4 @@
-# Crowdfunding_ETL
+# Crowdfunding_ETL - Group Project 2
 Group 9 
 
 Main Notebook file is under ETL_Mini_Project_KLe.ipynb
